@@ -1,0 +1,6 @@
+copy "C:\Users\Coke Chan\.m2\repository\com\solacesystems\sol-jms\10.10.0\sol-jms-10.10.0.jar"
+copy "C:\Users\Coke Chan\.m2\repository\commons-logging\commons-logging\1.1.3\commons-logging-1.1.3.jar"
+copy "C:\Users\Coke Chan\.m2\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar"
+copy "C:\Users\Coke Chan\.m2\repository\org\osgi\org.osgi.annotation\6.0.0\org.osgi.annotation-6.0.0.jar"
+copy "C:\Users\Coke Chan\.m2\repository\org\apache\servicemix\bundles\org.apache.servicemix.bundles.jzlib\1.0.7_2\org.apache.servicemix.bundles.jzlib-1.0.7_2.jar"
+copy "C:\Users\Coke Chan\.m2\repository\org\apache\geronimo\specs\geronimo-jms_1.1_spec\1.1.1\geronimo-jms_1.1_spec-1.1.1.jar"
