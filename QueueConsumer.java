@@ -95,7 +95,7 @@ public class QueueConsumer {
                 	boolean unblock = false;
                     if (message instanceof TextMessage) {
                     	String recvMessage = ((TextMessage) message).getText();
-                    	System.out.printf("[RECV]: [%s]%n", recvMessage);
+                    	System.out.printf("[RECV]: [%s]%n", displayLimitString(recvMessage,200));
                     	unblock = "exit".equalsIgnoreCase(recvMessage);
                         // System.out.printf("TextMessage received: '%s'%n", ((TextMessage) message).getText());
                     } else if (message instanceof BytesMessage) {
@@ -105,7 +105,7 @@ public class QueueConsumer {
                 		byteMessage.readBytes(byteData);
                 		byteMessage.reset();
                 		String recvMessage = new String(byteData);
-                    	System.out.printf("[RECV]: [%s]%n", recvMessage);
+                    	System.out.printf("[RECV]: [%s]%n", displayLimitString(recvMessage,200));
                     	unblock = "exit".equalsIgnoreCase(recvMessage);
                     } else {
                         System.out.println("Message received.");
@@ -123,6 +123,16 @@ public class QueueConsumer {
                     ex.printStackTrace();
                 }
             }
+            
+			private String displayLimitString(String recvMessage, int ilimit) {
+				String str = (recvMessage==null)?"":recvMessage;
+				if (str.length()>=ilimit) {
+					str = str.substring(0, 0+ilimit/2) + "..." + str.substring(str.length()-ilimit/2);
+				} 
+				return str;
+			}
+
+
         });
 
         // Start receiving messages

@@ -27,6 +27,7 @@ import java.io.FileReader;
 import java.io.File;
 import java.util.stream.Collectors;
 
+import javax.jms.BytesMessage;
 import javax.jms.Connection;
 import javax.jms.DeliveryMode;
 import javax.jms.Message;
@@ -43,7 +44,7 @@ import com.solacesystems.jms.SolJmsUtility;
  * 
  * The queue used for messages is created on the message broker.
  */
-public class QueueProducerFile {
+public class QueueProducerByteFile {
 
     final String QUEUE_NAME = "Q/messager";
 
@@ -57,7 +58,7 @@ public class QueueProducerFile {
         String password = args[2];
         String filepath = args[3];
 
-        System.out.printf("QueueProducer is connecting to Solace messaging at %s...%n", host);
+        System.out.printf("QueueProducerByteFile is connecting to Solace messaging at %s...%n", host);
 
         // Programmatically create the connection factory using default settings
         SolConnectionFactory connectionFactory = SolJmsUtility.createConnectionFactory();
@@ -100,8 +101,10 @@ public class QueueProducerFile {
             inputMessage =  reader.lines().collect(Collectors.joining());
             //System.out.printf("Content ["+inputMessage+"]: \n");
         
-            // Create a text message.
-	        TextMessage message = session.createTextMessage(inputMessage);
+            // Create a byte message.
+	        //TextMessage message = session.createTextMessage(inputMessage);
+	        BytesMessage message = session.createBytesMessage();
+	        message.writeBytes(inputMessage.getBytes());
 	
 	        //System.out.printf("Sending message '%s' to queue '%s'...%n", message.getText(), queue.toString());
 	
@@ -139,6 +142,6 @@ public class QueueProducerFile {
             System.out.println();
             System.exit(-1);
         }
-        new QueueProducerFile().run(args);
+        new QueueProducerByteFile().run(args);
     }
 }
