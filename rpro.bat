@@ -1,1 +1,2 @@
-java -classpath ".;lib/*" QueueProducer localhost:55555 admin@default admin
+java -classpath ".;lib/*;classes" com.QueueProducer localhost:55555 admin@default admin "Q/messager"
+
