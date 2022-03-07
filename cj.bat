@@ -9,5 +9,6 @@ javac -classpath ".;lib/*" -d classes src/main/java/com/QueueProducerFile.java
 javac -classpath ".;lib/*" -d classes src/main/java/com/QueueProducerByte.java
 javac -classpath ".;lib/*" -d classes src/main/java/com/QueueProducerByteFile.java
 
-
+javac -classpath ".;lib/*" -d classes src/main/java/com/SolaceProducer.java
+javac -classpath ".;lib/*" -d classes src/main/java/com/SolaceConsumer.java
 

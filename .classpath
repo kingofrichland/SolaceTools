@@ -34,9 +34,11 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="lib/commons-lang-2.6.jar"/>
 	<classpathentry kind="lib" path="lib/commons-logging-1.1.3.jar"/>
-	<classpathentry kind="lib" path="lib/geronimo-jms_1.1_spec-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/geronimo-jms_1.1_spec-1.1.1.jar" sourcepath="C:/Users/Coke Chan/.m2/repository/org/apache/geronimo/specs/geronimo-jms_1.1_spec/1.1.1/geronimo-jms_1.1_spec-1.1.1-sources.jar"/>
 	<classpathentry kind="lib" path="lib/org.apache.servicemix.bundles.jzlib-1.0.7_2.jar"/>
 	<classpathentry kind="lib" path="lib/org.osgi.annotation-6.0.0.jar"/>
 	<classpathentry kind="lib" path="lib/sol-jms-10.10.0.jar"/>
+	<classpathentry kind="lib" path="lib/jcommander-1.82.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
