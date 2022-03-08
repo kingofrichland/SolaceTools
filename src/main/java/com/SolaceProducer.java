@@ -114,6 +114,8 @@ public class SolaceProducer {
         // Enables persistent queues or topic endpoints to be created dynamically
         // on the router, used when Session.createQueue() is called below
         connectionFactory.setDynamicDurables(true);
+	    
+	connectionFactory.setSSLValidateCertificate(false);
 
         // Create connection to the Solace router
         Connection connection = connectionFactory.createConnection();
